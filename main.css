@@ -8,10 +8,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-  }
-  body {
-    font-family: 'Raleway', sans-serif;
-    color: #213053;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
   }
   .header__logo {
     height: 30px;
@@ -43,19 +43,19 @@ header {
   .about__sun-image {
     width: 100px;
     height: 100px;
-    animation-name: rotation;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-   
-
+    animation: rotation 10s infinite linear;
+    position: absolute;
   }
+
   .about {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-top: 115px;
     padding-bottom: 115px;
+    background: url('img/back.png') no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .about h1 {
     font-size: 70px;
@@ -77,13 +77,7 @@ header {
   }
   .about__info {
     max-width: 550px;
-  }
-  .about {
-  
-    background: url('img/back.png') no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+  }  
   .form__container {
     width: 550px;
   }
@@ -100,6 +94,7 @@ header {
    color: #fff;
    padding-top: 115px; 
    padding-bottom: 115px;
+   text-align: center;
   }
   .form h1{
    font-size: 48px;
@@ -107,7 +102,7 @@ header {
   .form p{
     font-size: 18px;
     opacity: 0.65;
-    text-align: center;
+  
   }
   .form form{
     display: grid;
@@ -117,7 +112,7 @@ header {
   .form label{
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   .form input, .form select{
     font-size: 18px;
@@ -126,6 +121,7 @@ header {
     padding: 0 20px;
     border-radius: 15px;
     border: none;
+    outline:  none;
   }
   
   .form__submit{
@@ -140,7 +136,7 @@ header {
     outline: none;
   }
 button:hover{
-    transition: background-color 0.2s ease-in;
+    transition: background-color 0.3s ease-in;
     background-color: #f6980c;
     box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
   }
@@ -175,9 +171,68 @@ opacity: 0.5;
 }
 @keyframes rotation{
   0%{
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
   100%{
     transform: rotate(360deg);
   }
 }
+@media (max-width: 320px){
+section {
+ padding: 50px 10px;
+}
+.about h1 {
+  font-size: 36px; 
+  line-height: 40px;
+}
+.form__containter h1{
+  font-size: 36px; 
+  line-height: 40px; 
+}
+header{
+  padding: 10px;
+}
+.header__logo{
+  height: 20px;
+}
+.about__image{
+  width: 280px;
+}
+.about__sun-image{
+  width: 75px;
+  height: 75px;
+}
+.about{
+  flex-direction: column-reverse;
+}
+.footer__container{
+  flex-direction: column;
+}
+}
+@media (min-width: 720px){
+  section{
+    padding: 50px 20px;
+   }
+   .about h1 {
+     font-size: 36px; 
+     line-height: 40px;
+   }
+   .form__containter h1{
+     font-size: 36px; 
+     line-height: 40px; 
+   }
+   header{
+     padding: 10px;
+   }
+   .header__logo{
+     height: 20px;
+   }
+   .about__image{
+     width: 280px;
+   }
+   .about__sun-image{
+     width: 75px;
+     height: 75px;
+   }
+
+  }
